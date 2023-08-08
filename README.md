@@ -1,2 +1,2 @@
 # quizless
-squizless lol
+[squizless](https://yadrychnikovnicolay.github.io/quizless/) lol
