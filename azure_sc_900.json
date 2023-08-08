@@ -1,0 +1,766 @@
+[
+  {
+    "front": "Zero Trust",
+    "back": "A security model that assumes everything is on an open and untrusted network, even resources behind firewalls\n\n\"Trust no one, verify everything\""
+  },
+  {
+    "front": "Zero trust guiding principles",
+    "back": "1. Verify explicitly - authenticate/authorize based on all data points (e.g. identity, location, device, service, data classification, anomalies, etc.)\n2. Least privileged access - limit with JIT/JEA, risk-based adaptive policies, and data protection\n3. Assume breach - Segment networks, users, devices, apps. Encrypt data. Use analytics to improve security."
+  },
+  {
+    "front": "Zero trust foundational pillars",
+    "back": "1. Identities - can be users, services, or devices\n2. Devices - monitor for health/compliance\n3. Apps - manage permissions/access\n4. Data - should be classified, labeled, and encrypted where appropriate\n5. Infrastructure - understand baseline to detect anomalies and flag risky behavior to take action\n6. Networks - should be segmented and include real-time threat monitoring and protection"
+  },
+  {
+    "front": "Shared responsibility model",
+    "back": "Identifies which security tasks are handled by the cloud provider vs the customer\n\nTypes:\nSaaS (Software as a Service)\nPaaS (Platform as a Service)\nIaaS (Infrastructure as a Service)\nOn-premises data center (On-prem)"
+  },
+  {
+    "front": "What security tasks ALWAYS responsibility of the customer?",
+    "back": "1. Data\n2. Devices\n3. Accounts/Identities"
+  },
+  {
+    "front": "Software as a Service (SaaS)",
+    "back": "Software hosted and managed by the cloud provider for the customer. Cloud provider manages everything aside from data, devices, accounts, and identities\n\nExamples include: Microsoft 365, Skype, and Dynamics CRM"
+  },
+  {
+    "front": "On-prem datacenter",
+    "back": "Customer responsible for EVERYTHING from physical security to encrypting sensitive data"
+  },
+  {
+    "front": "Infrastructure as a Service (IaaS)",
+    "back": "leveraging the cloud provider's cloud infrastructure (physical) including computers, network, and physical security of the datacenter. Customer still manages software components."
+  },
+  {
+    "front": "Platform as a Service (PaaS)",
+    "back": "Provides an environment to build, test, and deploy software applications by providing underlying infrastructure including the hardware and OS"
+  },
+  {
+    "front": "Dictionary attack",
+    "back": "Attempts to steal identity by trying a large number of known passwords\n\nAKA Brute force attacks"
+  },
+  {
+    "front": "Rootkits",
+    "back": "Intercept and change the standard OS process. Can then report the device is healthy and not infected so can't be trusted"
+  },
+  {
+    "front": "Symmetric encription",
+    "back": "Uses the same secret key to encrypt and decrypt"
+  },
+  {
+    "front": "Asymmetric encryption",
+    "back": "Uses a public key and private key pair\n\nExamples: TLS (Transport Layer Security) for the HTTPS protocol, and data signing"
+  },
+  {
+    "front": "Hashing",
+    "back": "Uses and algorithm to convert original text into a unique fixed-length hash value\n\nUsed to store passwords\n\nBest practice: salt passwords"
+  },
+  {
+    "front": "Microsoft Cloud Adoption Framework for Azure",
+    "back": "Consists of documentation, implementation guidance, best practices, and tools designed to help businesses adopt cloud"
+  },
+  {
+    "front": "Cloud Adoption Framework for Azure Lifecycle",
+    "back": "1. Strategy: define business justification and expected outcomes of adoption.\n2. Plan: align actionable adoption plans to business outcomes.\n3. Ready: Prepare the cloud environment for the planned changes.\n4. Adopt\n-Migrate: Migrate and modernize existing apps\nAND/OR\n-Innovate: Develop new cloud-native or hybrid apps\n5. Govern: Govern the environment and workloads.\n6. Manage: Operations management for cloud and hybrid solutions."
+  },
+  {
+    "front": "Password spray attack",
+    "back": "Attempts to match a username against a list of weak passwords"
+  },
+  {
+    "front": "User risk vs sign-in risk",
+    "back": "User risk - probability that a given identity or account is compromised (i.e. leaked credentials on the web)\n\nSign-in risk - probability that a given authentication request isnt authorized by the identity owner (i.e. likelihood sign-in not performed by the user based on location)"
+  },
+  {
+    "front": "What is the new security perimeter?",
+    "back": "Identity - how a user, app, device, etc. can be verified and authenticated to be who they say they are such"
+  },
+  {
+    "front": "Pillars of Identity",
+    "back": "1. Administration - creation and management (LCM) of identities\n2. Authentication (AuthN)- proving identity, how much evidence needed\n3. Authorization (AuthZ) - determine level of access an authenticated identity has\n4. Auditing - tracking via logs who does what, when, where, & how via reporting alerts and governance"
+  },
+  {
+    "front": "Modern authentication",
+    "back": "All services and information are are managed by a central identity provider\n\nClient authenticates with IdP. Once authenticated, the IdP sends the client a security token. The token is used as proof of identity that is sent to the server\n\nThe server has a trust relationship with the IdP so it verifies with the IdP and trusts the security token"
+  },
+  {
+    "front": "Security token",
+    "back": "Cryptographically signed document issued to identity after authenticating with IdP\n\nUsed as proof of identity with servers\n\nContains 'claims' associated with the identity"
+  },
+  {
+    "front": "Trust relationship",
+    "back": "relationship between the server and the IdP to that is used to validate the security token granted to the client"
+  },
+  {
+    "front": "Common claims of security tokens",
+    "back": "subject - unique, unchanging identifier of the client\nissued at - when security token was issued\nexpiration - when the security token should expire\naudience - describes the recipient of the token so the token cannot be forwarding to others. If audience does not list recipient it is dropped"
+  },
+  {
+    "front": "Federation",
+    "back": "Single Sign-On between multiple identity providers\n\nEnables access of services across organizational boundaries by establishing trust relationships between the domain/entities' identity provider\n\nTrust is not always bidirectional"
+  },
+  {
+    "front": "SSO",
+    "back": "Single Sign-On - user logs in once and that credential is used across multiple apps/resources"
+  },
+  {
+    "front": "Directory Services",
+    "back": "Stores directory data (hierarchical structure of info on the network) and makes available to users, admins, services, apps, etc."
+  },
+  {
+    "front": "AD",
+    "back": "Active Directory - set of directory services developed by Microsoft as part of Windows 2000 for on-premises domain-based networks"
+  },
+  {
+    "front": "AD DS",
+    "back": "Active Directory Domain Services - stores information about members of the domain, including devices and users, verifies their credentials, an defines their access rights. A server running AD DS is a domain controller (DC)\n\nSupports on-premises IT infrastructure for multiple domains using a single identity per user\n\nDoes not natively support mobile devices, SaaS applications, or apps that require MODERN authentication"
+  },
+  {
+    "front": "DC",
+    "back": "Domain Controller - server running Active Directory Domain Services"
+  },
+  {
+    "front": "Azure Active Directory",
+    "back": "Microsoft's cloud based identity provider that provides organizations with IDaaS (Identity as a Service) solution for all apps across cloud and on-premises\n\nEnables employees, guests, and others to sign-in and access internal services (apps developed internally) and external services (SaaS apps like O365, Azure portal, etc.)\n\nCan enable orgs to securely enable use of personal devices and collaboration with business partners and customers"
+  },
+  {
+    "front": "Azure AD editions",
+    "back": "1. Azure Active Directory Free\n2. Office 365 Apps\n3. Azure Active Directory Premium P1\n4. Azure Active Directory Premium P2"
+  },
+  {
+    "front": "Azure Active Directory Free Edition",
+    "back": "Allows you to administer users groups\nSynchronize with AD (on-prem)\nConfigure self-service password change for cloud users\nEnable SSO across Azure, M365, and other SaaS apps\n\nIncluded with subscriptions to O365, Azure, Dynamics 365, and Power Platform"
+  },
+  {
+    "front": "Office 365 Apps (Azure AD) Edition",
+    "back": "Free features +\nself-service password RESET for cloud users\nDevice write-back (two-way synchronization between on prem and Azure AD)\n\nIncluded with subscriptions to O365, E1, E3, E5, F1, and F3"
+  },
+  {
+    "front": "Azure Active Directory Premium P1",
+    "back": "Includes all features in Free + O365 features +\nAdvanced admin (including dynamic groups)\nSelf-service group management\nMicrosoft Identity manager (on-prem IAM suite)\nCloud write-back capabilities (allow self-service password reset for on-prem users)"
+  },
+  {
+    "front": "Azure Active Directory Premium P2",
+    "back": "All P1 features +\nAzure AD Identity protection to provide risk-based Conditional Access to apps and data\nPIM - Privileged Identity Management to help discover, restrict, and monitor admins and access to resources & provide (just-in-time) JIT access when needed"
+  },
+  {
+    "front": "Types of Azure AD Identities",
+    "back": "User\nService Principal\nManaged Identity\nDevices"
+  },
+  {
+    "front": "User",
+    "back": "Representation of something managed by Azure AD such as employees and guests (B2B)\n\nUse groups to provide access to several members at once vs assigning individually"
+  },
+  {
+    "front": "Service Principle",
+    "back": "Security identity used by apps or services to access specific Azure resources (i.e. an identity for an application)\n\nApp must first be registered with Azure AD which creates a global unique app object that is stored in the Azure AD tenant"
+  },
+  {
+    "front": "Managed Identities",
+    "back": "Identities automatically managed in Azure AD and typically used to manage credentials for authenticating a cloud application with an Azure service"
+  },
+  {
+    "front": "Types of managed identites",
+    "back": "System-assigned - created as part of an Azure service/resource and only that resource and tied to LCM of that service (i.e. if service is deleted, so is the identity)\n\nUser-assigned - a standalone Azure resource that is assigned to one or more instances of an Azure service and is shared as a single identity across multiple Azure services"
+  },
+  {
+    "front": "Device",
+    "back": "piece of equipment such as a mobile device, laptop, printer, server, etc.\n\nDevice identities can be set up in 3 different was in Azure AD:\n1) Registered devices\n2) Joined devices\n3) Hybrid joined devices"
+  },
+  {
+    "front": "Azure AD registered devices",
+    "back": "Can be Windows 10, iOS, Android, or macOS devices\n\nTypically a personal device that is signed in with a personal Microsoft account or another local account"
+  },
+  {
+    "front": "Azure AD joined devices",
+    "back": "Devices that exist only in the cloud that can be configured for all Win10 devices\n\nOwned by the organization and signed in with Azure AD or synced AD work or school account"
+  },
+  {
+    "front": "Hybrid Azure AD joined devices",
+    "back": "Can be Windows 7, 8.1, or 10 OR Windows Server 2008 or newer\n\nOwned by the org and signed in with an AD Domain services (on-prem) account. Exists in the cloud and on-prem"
+  },
+  {
+    "front": "Microsoft Intune",
+    "back": "A mobile device management (MDM) solution to manage devices"
+  },
+  {
+    "front": "Azure AD External Identities",
+    "back": "Set of capabilities that enable organizations to allow access to external users, such as customers or partners to \"bring their own identities\" to sign in\n\nEnabled through Azure AD support of external identities like other Azure AD tenants, Facebook, Google, or enterprise identity providers if admins set up federation with them"
+  },
+  {
+    "front": "Azure AD External identity types",
+    "back": "B2B: allows you to share apps and resources with external users\n\nB2C: Identity management solution for consumer and customer facing apps\n\nBoth included in Premium P1 and Premium P2 Azure AD editions"
+  },
+  {
+    "front": "B2B Collaboration",
+    "back": "Allows you to share your orgs apps and services with guest users from other orgs while maintaining control over your data\n\nUses invitation and redemption process and managed in Azure AD as guests\n\nAllows external users to access your resources with their credentials\n\nSupports SSO for guests to all Azure AD-connected apps"
+  },
+  {
+    "front": "B2C Access Management",
+    "back": "Customer Identity access management (CIAM) solution that allows users to sign-in with their preferred social, enterprise, or local account identities to get SSO to your apps\n\nManaged in the Azure B2C directly and separately from the organization's employee and partner directory\n\nSSO to customer owned apps within B2C tenant are supported"
+  },
+  {
+    "front": "Hybrid Identity model",
+    "back": "Identities are created/managed in AD DS or another on-premis identity provider and then synchronized to Azure AD\n\nBoth cloud-only and hybrid identities can access both cloud and on-prem resources\n\nWhen updates to user accounts, groups, and contacts are made in your on-prem DS, all are synchronized to Azure AD via Azure Ad Connect\n\nIdentities can be authenticated by Azure AD (managed authentication) or Azure AD redirects the client requesting the authentication to another identity provider (federated authentication)"
+  },
+  {
+    "front": "Cloud-only model",
+    "back": "Identities are created and wholly managed in Azure AD\n\nBoth cloud-only and hybrid identities can access both cloud and on-prem resources"
+  },
+  {
+    "front": "Azure AD Connect",
+    "back": "When updates to user accounts, groups, and contacts are made in your on-prem DS, all are synchronized to Azure AD via Azure Ad Connect"
+  },
+  {
+    "front": "Managed authentication",
+    "back": "In the hybrid model, authentication is done by Azure AD"
+  },
+  {
+    "front": "Federated authentication",
+    "back": "Azure AD redirects the client requesting authentication to a separate trusted identity provider such as AD FS (AD Federation SErvices) to validate user's password"
+  },
+  {
+    "front": "Authentication methods",
+    "back": "1) Password hash synchronization\n2) Pass-through authentication (PTA)\n3) Federated authentication"
+  },
+  {
+    "front": "PTA (Pass-through authentication)",
+    "back": "Simple password validation for Azure AD authentication services by using a software agent that runes on on-premis servers. Server validates the users directly with an on-prem AD so it doesn't happen in the cloud"
+  },
+  {
+    "front": "Password hash synchronization",
+    "back": "Used to authenticate on-prem directory objects in Azure AD. Users have same username and password that they use on-prem"
+  },
+  {
+    "front": "Security defaults",
+    "back": "set of basic identity security mechanisms recommended by Microsoft\n\nIncludes:\nRequired MFA registration for all users\nForcing admins to use MFA\nRequiring standard users to complete MFA when needed"
+  },
+  {
+    "front": "Microsoft Authenticator app",
+    "back": "Mobile app (available for Android and iOS) for MFA and can be configured to use biometrics such as fingerprint or facial scan"
+  },
+  {
+    "front": "OATH",
+    "back": "OATH (Open Authentication) - open standard that specifies how time-based, one-time password (TOTP) codes are generated to authenticate a user\n\nCan be software tokens (e.g. MSFT Authenticator app) or hardware tokens that refreshes every 30-60 seconds"
+  },
+  {
+    "front": "FIDO2",
+    "back": "Abbreviation for Fast Identity Online - an alliance that promotes open authentication standards and aims to reduce reliance on passwords\n\nFIDO2 allows users to sign-in with an external security key such as a USB, lightning connector, Bluetooth, or NFC\n\nAzure AD supports FIDO2"
+  },
+  {
+    "front": "Windows Hello for Business",
+    "back": "Authentication feature built into Windows 10, replaces passwords with strong 2FA on PCs and mobile devices using a biometric or PIN\n\nStores PIN and biometric data locally on device (never sent to external devices or servers) = safer b/c no collection point for attackers to compromise"
+  },
+  {
+    "front": "Windows Hello lets users authenticate to",
+    "back": "1) A Microsoft account\n2) An AD account\n3) An AAD account\n4) Identity provider or Relying Party Services that supports FIDO v2.0"
+  },
+  {
+    "front": "Configurations for Windows Hello",
+    "back": "1) Windows Hello convenience PIN - configured by a user; no asymmetric or cert-based authentication\n\n2) Windows Hello for Business - configured by Group Policy or MDM (mobile device management) policy such as Microsoft Intune; backed by key-based or cert-based authentication = safer than convenience PIN"
+  },
+  {
+    "front": "Windows Hello for Business",
+    "back": "Configured by Group Policy or MDM (mobile device management) policy such as Microsoft Intune; backed by key-based or cert-based authentication = safer than convenience PIN"
+  },
+  {
+    "front": "Why is Windows Hello safer than a password?",
+    "back": "PIN is tied to device and useless w/o hardware\n\nPIN never transmitted anywhere, so no central location for attackers\n\nWindows Hello PIN is backed by a TPM (Trusted Platform Module) chip with built-in physical security that is tamper resistant"
+  },
+  {
+    "front": "SSPR",
+    "back": "Self Service Password Reset - feature of Azure AD that allows users to change or reset their password, or unlock their account without an admin or help desk\n\nAuth methods available include: mobile app notification, mobile app code, email, mobile phone, office phone, security questions\n\nUser must be assigned an Azure AD license and registered with at least 1 authentication method"
+  },
+  {
+    "front": "Defaults for admins using SSPR",
+    "back": "By default admin accounts:\nAre enabled for SSPR\nAre required to use 2FA\nCannot use security questions (weak)"
+  },
+  {
+    "front": "Password write-back",
+    "back": "When password is changed via SSPR, is written back to on-prem AD in real-time"
+  },
+  {
+    "front": "Password Protection",
+    "back": "feature of Azure AD that reduces risk of users setting weak passwords based on password spray attacks\n\nDetects and blocks known weak passwords automatically via a default global banned password list AND can weak terms specific to your org\n\nCan be integrated with an on-prem AD environment"
+  },
+  {
+    "front": "Conditional Access",
+    "back": "Premium feature of Azure AD that provides extra layer of security before allowing authenticated users to access data or other assets\n\nmanaged through CA policies created and managed in Azure AD\n\nPolicies analyses signals including user/group membership, location via IP address range, device compliance, application, cloud apps, real-time sign-in risk detection (via Azure AD Identity Protection), or user risk (via Identity protection)"
+  },
+  {
+    "front": "CA access controls",
+    "back": "At time of auth requerts, can:\n1) Block access\n2) Grant Access\n3) Require one or more conditions to be met before granting access (MFA, compliant device, hybrid joined, password change, etc.)\n4) Control user access based on session controls (e.g. don't allow ability to download sensitive data)"
+  },
+  {
+    "front": "Azure Role-Based Access Control (RBAC)",
+    "back": "Control permissions to manage Azure AD resources\n\nSupports built-in and custom roles (requires Premium P1 or P2 license):\nGlobal Administrator\nUser administrator\nBilling administrator"
+  },
+  {
+    "front": "Global admin (GA)",
+    "back": "Users with this role have access to all admin features in Azure AD"
+  },
+  {
+    "front": "User administrator",
+    "back": "Users with this role can create and manage all aspects of user and groups\n\nAlso have ability to support tickets and monitor service health"
+  },
+  {
+    "front": "Billing administrator",
+    "back": "Users with this role make purchases, manage subscriptions & support tickets, and monitor service health"
+  },
+  {
+    "front": "Azure AD identity governance tasks",
+    "back": "Govern identity LCM\nGovern access LCM\nSecure privileged access for admins\n\nfor employees, business partners and vendors, and across services and applications on-prem & in the cloud"
+  },
+  {
+    "front": "Microsoft Identity Manager",
+    "back": "Can import records from on-prem HR systems such as SAP HCM, Oracle eBusiness, and Oracle PeopleSoft"
+  },
+  {
+    "front": "Dynamic groups",
+    "back": "enable admins to create attribute-based rules to determine membership of groups\n\nwhen attributes of a user or device change, the system evaluates all dynamic group rules in a directory to see if the change would trigger any users to be added or removed from a group. If yes, added and if no longer, removed from group"
+  },
+  {
+    "front": "PIM",
+    "back": "Privileged Identity Management is a service in Azure Active Directory that enables you to manage, control, and monitor access to important Microsoft resources in your org (Azure AD, Azure, M365, Microsoft Intune)\n\nPart of Premium P2 only\n\nHelps you minimize number of people who have access to resources across Azure AD"
+  },
+  {
+    "front": "Entitlement management",
+    "back": "automates access request workflows, access assignments, reviews, and expiration to allow orgs to manage IAM at scale via access packages\n\nfeature of Azure Ad Premium P2 (along with access reviews)"
+  },
+  {
+    "front": "Access packages",
+    "back": "Allows users (including external users) to request/receive access to groups of resources together (e.g. IAM access) bundled together to improve efficiency"
+  },
+  {
+    "front": "PIM characteristics",
+    "back": "JIT/JEA access\nTime-bound (assign start and end dates) - can be helpful for guests leaving by x date\nApproval-based to activate privileges\nVisible/transparent by sending notifications when privileged roles are activated\nAuditable"
+  },
+  {
+    "front": "Azure Identity Protection",
+    "back": "Tool that allows orgs to:\nAutomate detection and remediate identity-based risks based on Microsoft learnings from trillions of data points with its customers\nInvestigate risks using data in the portal\nExport risk detection data to a third-party utilities for further analysis\n\nCategorizes into three tiers: low, medium, and high\n\nRisk detections can trigger actions such as requiring users to provide MFA, reset their password, or block access until an admin takes action\n\nRequires Premium P2"
+  },
+  {
+    "front": "Sign-in risk",
+    "back": "Probability that a given auth request isn't authorized by the identity owner\n\nCan be calculated in real-time or offline using MSFT threat intelligence sources (Identity protection)\n\nExamples: anonymous or malware IP address, atypical travel, password spray, AAD threat intelligence (meets attack pattern)"
+  },
+  {
+    "front": "User risk",
+    "back": "probability a given identity or account is compromised\n\nCalculated offline via threat intelligence sources\n\nExamples: leaked credentials found on the dark web, AAD threat intelligence (meets attack patters or is not consistent with typical user behavior)"
+  },
+  {
+    "front": "Identity Protection reports",
+    "back": "Risky users\nRisky sign-ins\nRisk detections"
+  },
+  {
+    "front": "An organization has recently conducted a security audit and found that four people who have left were still active and assigned global admin roles. The users have now been deleted but the IT organization has been asked to recommend a solution to prevent a similar security lapse happening in future. Which solution should they recommend?",
+    "back": "PIM - Privileged Identity Management mitigates the risks of excessive, unnecessary, or misused access permissions."
+  },
+  {
+    "front": "Azure Network Security Group (NSG)",
+    "back": "Allow you to allow or deny inbound/outbound network traffic based on rules to/from Azure resources that exist in your Vnet (e.g. a vm)"
+  },
+  {
+    "front": "Azure virtual network (VNet)",
+    "back": "enables different Azure resources (e.g. Azure virtual machine) to securely communicate with other VNets, the internet, or your on-prem network\n\ncan be divided into multiple subnetworks (subnets) secured by network security groups (NSGs)"
+  },
+  {
+    "front": "NSG information points",
+    "back": "Allows/denies traffic to Azure resources based on 5 by priority using 5 evaluation points:\n1/2) Source/Destination (IP address range, service tag, or app security group)\n3/4) Source/Destination port (range)\n5) Protocol (TCP, UDP, ICMP, or Any)"
+  },
+  {
+    "front": "NSG priority",
+    "back": "A number between 100-4096, security rules are processed in order of priority (lower --> higher numbers)\n\nOnce a a traffic matches a rule, processing stops"
+  },
+  {
+    "front": "Types of DDOs attacks",
+    "back": "1) Volume-based attacks -flood the network with seemingly legit traffic to not allow legit traffic to get through\n2) Protocol attacks - overwhelm with false protocol requests in layer 3 (network) and layer 4 (transport)\n3) Resource (application) layer attacks -target web application packets to disrupt transmission of data between hosts"
+  },
+  {
+    "front": "Azure DDoS Protection",
+    "back": "Identifies an attacker's attempt to overwhelm the network and blocks the traffic from the attacker\n\nTiers:\n1) Basic - enable for every property in Azure at no additional cost and includes real-time mitigation of common network-level attacks using MSFTs global network to distribute attacks\n2) Standard - provides extra mitigation capabilities including dedicated traffic monitoring and machine learning algorithms"
+  },
+  {
+    "front": "Azure Firewall",
+    "back": "A managed, cloud-based network security service that protects your Azure VNet resources\n\nAdvantage of model is ability to scale up/centrally exert control over multiple VNets across different subscriptions"
+  },
+  {
+    "front": "Key features of Azure Firewall",
+    "back": "1) High availability and ability to span multiple availability zones\n2) Network and app level filtering\n3) Outbound SNAT (Source Network Address Translation)\n4) Inbound DNAT (Destination Network Address Translation)\n5) Multiple public IP addresses\n6) Threat intelligence filterning\n7) Integration with Azure Monitor to analyze logs"
+  },
+  {
+    "front": "SNAT",
+    "back": "Source Network Address Translation - translates private IP address of network resources in Azure public IP address to identify and allow traffic originating from the virtual network to internet destinations"
+  },
+  {
+    "front": "DNAT",
+    "back": "Destination Network Address Translation - inbound internet traffic to the firewall public IP address is translated and filtered to the private IP address of resources on the virtual network"
+  },
+  {
+    "front": "Azure Bastion",
+    "back": "provides secure and seamless RDP (Remote Desk Protocol)/SSH (Secure Shell) connectivity to your virtual machines directly from the Azure portal using TLS (Transport Layer Security)\n\nDoes not require a public IP address, agent, or special client software\n\nMore secure because does not expose RDP/SSH ports to the public (protects against port scanning)\n\nProtects against zero-day exploits\n\n1 Azure Bastion deployed per VNet\n\nDoes not require management of NSGs"
+  },
+  {
+    "front": "Web App Firewall (WAF)",
+    "back": "centralized protection of web apps from common exploits\n\nCan be deployed via Azure Application Gateway, Azure Front Door, Azure Content Delivery Network (CDN) services from MSFT"
+  },
+  {
+    "front": "Azure Storage Service Encryption",
+    "back": "protects data at rest by automatically encrypting BEFORE persisting it to Azure storage decrypts before retrieval"
+  },
+  {
+    "front": "Azure Disk Encryption",
+    "back": "helps you encrypt Windows and Linux IaaS virtual machine disks via BitLocker"
+  },
+  {
+    "front": "Transparent Data Encryption (TDE)",
+    "back": "protects Azure SQL Database and Azure Data warehouse"
+  },
+  {
+    "front": "Azure Key Vault",
+    "back": "Centralized cloud service for storing app secrets including:\n1) Secrets management (tokens, passwords, API keys, etc.)\n2) Key management (private encryption keys)\n3) Certificate management (provision/manage public and private SSL/TLS certs\n4) Secrets backed by HSMs (Hardware Security Modules)"
+  },
+  {
+    "front": "The security admin wants to protect Azure resources from DDoS attacks, which Azure DDoS Protection tier will the admin use to target Azure Virtual Network resources?",
+    "back": "Standard (not Basic) - The Standard service tier provides additional mitigation capabilities that are tuned specifically to Microsoft Azure Virtual Network resources"
+  },
+  {
+    "front": "Cloud Security Posture Management (CSPM)",
+    "back": "Tools designed to improve your cloud security management and disrupt attackers ROI\n\nAssesses systems and automatically alerts security staff in your IT department when a vulnerability is found\n\nTools include:\n1) Zero Trust-based access control\n2) Real-time risk scoring\n3) Threat and Vulnerability Management (TVM)\n4) Discover sharing risks -data exposure of company IP\n5) Technical policy - apply technical controls to audit/enforce policies\n6) Threat modeling systems and architecture"
+  },
+  {
+    "front": "Azure Security Center",
+    "back": "Network security monitoring service that provides infrastructure level security management to strengthen your security posture\n\nIncludes:\n*Continuous assessment of environments and prioritized recommendations for hardening tasks\n*Network maps - look at topology of workloads to ensure nodes are properly configured and how they are connected to block unwanted/unnecessary connections\n*Threat protection - detect and prevent threats on IaaS, non-Azure servers, & PaaS; integrates with MSFT Defender for Endpoint\n\nAzure Defender Off mode is free; Defender On costs"
+  },
+  {
+    "front": "Azure Secure Score",
+    "back": "Score given by Azure Security Center based on aggregate of assessment of resources, subscriptions, and org for security issues\n\nHigh the score, the lower the risk (e.g. 90% secure is very secure)\n\nImprove your score by following provided security recommendations via manual changes or by using the Quick Fix! option"
+  },
+  {
+    "front": "Azure Defender",
+    "back": "a built-in threat protection tool built into Azure Security Centerthat protects workloads running in Azure, on-prem, hybrid, and other clouds\n\nUses policies including those built-in by default, custom, and regulatory standards such as NIST and Azure CIS, and the Azure Security Benchmark"
+  },
+  {
+    "front": "Azure Defender plan options",
+    "back": "Azure Defender for:\nServers - Windows and Linux machines\nApp Services\nAzure Storage containers\nSQL\nKubernetes\nContainer registries (Azure Resource Manager based registries)\nKey Vault"
+  },
+  {
+    "front": "Azure Security Benchmark (ASB)",
+    "back": "provides prescriptive best practices and recommendations to help improve the security of workloads, data, and services on Azure\n\nSpans network security, IAM, data protection/recovery, incident response, and more"
+  },
+  {
+    "front": "An organization needs to continuously monitor the security status of its network. What Security Center tool would they use?",
+    "back": "The network map provides a map of the topology of your network workloads, which lets you block unwanted connections."
+  },
+  {
+    "front": "SIEM",
+    "back": "Security Information and Event Management - tool used to collect data from across the whole estate, including infrastructure, software, and resources\n\nPerforms analysis, looks for correlations/anomalies, and generates alerts and incidents"
+  },
+  {
+    "front": "SOAR",
+    "back": "Security Orchestration Automated Response - takes alerts from many sources including SIEMs and then triggers action-driven automated workflows and processes to run security tasks to mitigate the risk"
+  },
+  {
+    "front": "XDR",
+    "back": "Extended Detection Response - system that delivers intelligent, automated, and integrated security across an org's domain\n\nPrevents, detects, and responds to threats across identities, endpoints, applications, email, IoT, infrastructure, and cloud platforms\n\nProvided via Microsoft 365 Defender and Azure Defender integrated with Azure Sentinel"
+  },
+  {
+    "front": "Azure Sentinel",
+    "back": "A scalable, cloud-native SIEM/SOAR single solution for alert detection, threat visibility, proactive hunting, and threat response\n\nSpans all users, devices, apps, infrastructure (on-prem and in the cloud)\n\nLeverages Artificial Intelligence"
+  },
+  {
+    "front": "Azure Monitor Workbooks",
+    "back": "Canvas for data analysis with built-in and custom reports from Azure Sentinel integration from several data sources"
+  },
+  {
+    "front": "Azure Logic Apps",
+    "back": "Can be used to automate and orchestrates tasks\n\nIntegrated with Azure Sentinel in the SOC to automate workflows and playbooks in response to security events"
+  },
+  {
+    "front": "Microsoft's XDR tools",
+    "back": "Microsoft 365 Defender &\nAzure Defender\n\nBoth integrate with Azure Sentinel"
+  },
+  {
+    "front": "Azure Sentinel costs",
+    "back": "Data for security analytics is stored in an Azure Monitor Log workspace\n\nBilling based on volume of data ingested and stored\n\nBilled in two models:\n1) Capacity reservations - fixed fee based on the selected tier\n2) Pay-As-You-Go - Billed per GB for volume of data ingested and stored"
+  },
+  {
+    "front": "Azure Sentinel Security Operation Areas",
+    "back": "Collect\nDetect\nInvestigate\nRespond"
+  },
+  {
+    "front": "Microsoft 365 Defender",
+    "back": "Enterprise defense suite that protects against sophisticated cyberattacks\n\nCovers threats detection --> response across all service domains including applications, email, endpoints, identities, and data\n\nNOT domain-specific, threat detection and responses across all domains\n\nDefault workflows and custom workflows available"
+  },
+  {
+    "front": "Microsoft 365 Defender suite protects..",
+    "back": "1) Endpoints with Microsoft Defender for Endpoint\n2) Email and collaboration with Microsoft Defender for Office 365\n3) Identities with Microsoft Defender for Identity and Azure AD Identity Protection\n4) Cloud Applications with Microsoft Cloud App Security"
+  },
+  {
+    "front": "Microsoft Defender for Identity",
+    "back": "Cloud-based security tool using ON-PREM AD data/signals to identify, detect, and investigate threats of compromised identities and malicious insider actions\n\nMonitors user profiles and behaviors to identify suspicious accounts\n\nFKA Azure ATP (Advanced Threat Protection)"
+  },
+  {
+    "front": "Microsoft Defender for Office 365",
+    "back": "Safeguards your organization against malicious threats posed by email message, links (URLs), and collaboration tools including MSFT Teams, SharePoint Online, OneDrive for Business, and other Office clients\n\nFKA Office 365 ATP (Advanced Threat Protection)\n\nAvailable in two plans: Microsoft Defender for Office 365 Plan 1 and Plan 2\n\nIncluded in certain subscriptions or available as a standalone add on"
+  },
+  {
+    "front": "Microsoft Defender for Office 365 Plan 1",
+    "back": "Offers config, protection, and detection tools for your Office 365 suite including:\nSafe attachments (checks for malicious content)\nSafe Links (links scanned for malicious sites)\nSafe attachments for SharePoint, OneDrive, and MSFT Teams\nAnti-phishing protection\nReal-time detection of threats"
+  },
+  {
+    "front": "Microsoft Defender for Office 365 Plan 2",
+    "back": "Everything in Plan 1 +:\nThreat trackers - latest intelligence on cybersecurity issues and allows org to take action BEFORE a threat\nThreat Explorer - real-time report that allows you to identify and analyze recent threats\nAIR (Automated Investigation and Response) - set of security playbooks and recommended actions\nAttack Simulator - run realistic attack scenarios in your org"
+  },
+  {
+    "front": "Microsoft Defender for Endpoint",
+    "back": "Help protect endpoints via technology embedded into Windows 10 and MSFT cloud services including endpoint behavioral sensors from the OS\n\nUses AI\n\nFKA Microsoft Defender ATP (Advanced Threat Protection)"
+  },
+  {
+    "front": "Microsoft Cloud App Security (MCAS)",
+    "back": "A Cloud Access Security Broker (CASB)\n\nA cross-SaaS solution that acts as an intermediary between a cloud user and the cloud provider including control over data travel (e.g. can't download red data)\n\nhelps discover/control use of Shadlow IT of cloud apps being used\n\nOffice 365 is a subset of MCAS"
+  },
+  {
+    "front": "CASB",
+    "back": "Cloud Access Security Broker - gatekeeper to broker real-time access between users and the cloud resources they use on any device in any location\n\nProvides:\n1) Visibility to all cloud services (help identify Shadow IT)\n2) Data Security - classified as Red\n3) Threat protection\n4) Compliance for cloud apps - meet regulatory standards (e.g. HIPPA)"
+  },
+  {
+    "front": "MCAS tools/architecture",
+    "back": "Cloud Discovery - map and identify cloud environment\nSanctioning/unsanctioning apps in the Cloud App Catalog\nApp connectors using provider APIs\nConditional Access App Control protection\nContinuous control via policies to control/detect risky user behavior"
+  },
+  {
+    "front": "Office 365 Cloud App Security",
+    "back": "Subset of MCAS that provides enhanced visibility and control for Office 365"
+  },
+  {
+    "front": "Cloud App Security portal",
+    "back": "lets you see the security posture of your cloud-based apps"
+  },
+  {
+    "front": "Microsoft 365 Defender portal",
+    "back": "helps security admins and SOC teams manage and protect their org by showing the common security cards in navigation panel w/ ability to customize by individual\n\na specialized workspace designed to meet the needs of security teams and provides actionable insights to help reduce risks and safeguard your digital estate\n\nIncludes a Microsoft Secure Score (broader than Azure Secure Score)\n\ncombines MCAS, Defender for O365/Identity/Endpoint, and AAD"
+  },
+  {
+    "front": "Microsoft Secure Score",
+    "back": "measure of the company's security posture of the organization across your apps, devices, and identities\n\nhigher score = better protection\n\nprovides benchmarks and KPIs\n\nprovides recommendations/actions to improve score for M365, AAD, Microsoft Defender for Identity/Endpoint, and MCAS"
+  },
+  {
+    "front": "Microsoft 365 Defender portal security report",
+    "back": "view info about security trends by CATEGORY or GROUP:\nGroup by CATEGORY:\nIdentities - users\nData - emails and document cotents\nDevices - computers, mobile phones, and other devices\nApps - programs and attached online services\n\nGroup by TOPIC:\nRisk - entities that are at highest risk\nDetection trends - new threats\nConfiguration and health - configuration and deployment of security controls"
+  },
+  {
+    "front": "Microsoft 365 Defender Endpoint reports",
+    "back": "Includes:\nThreat protection report - high level info about threat trends and alerts generated in your org\nDevice health and compliance report\nVulnerable devices report - includes their exposure to vulnerabilities, severity, etc."
+  },
+  {
+    "front": "Microsoft 365 Defender incidents que",
+    "back": "central location to prioritize cross-domain attacks and alerts into single incidents and severity of incident\n\nshows number of alerts, type, impact, and how it maps to THE MITRE attack framework"
+  },
+  {
+    "front": "Microsoft Intune",
+    "back": "Cloud-based service that focuses on MDM (mobile device management) and MAM (mobile application management) to control how org's devices (phones, tablets, laptops) are used\n\nAllows people to use personal devices and ensures company data stays protected and isolated from personal data\n\nDevices controlled via security baselines, compliance policies, and Conditional Access\n\nIntegrates with Microsoft Defender for Endpoint for a Mobile Threat Defense solution for Android, iOS/iPadOS, and Win10 or later"
+  },
+  {
+    "front": "MAM",
+    "back": "Mobile Application Management - gives admins ability to protect corporate data at the app level (let users use their personal devices, but protect org's data)\n\nsupports BYOD"
+  },
+  {
+    "front": "Microsoft Intune Endpoint security node",
+    "back": "where admins go to configure and manage/enforce security tasks for at-risk devices"
+  },
+  {
+    "front": "Microsoft Intune: RBAC",
+    "back": "Role-based Access Control - assign roles to Intune users to limit what they can see/edit/download"
+  },
+  {
+    "front": "Endpoint Security Manager",
+    "back": "admin role in Microsoft Intune that grants access to the Microsoft Endpoint Manager admin center"
+  },
+  {
+    "front": "An organization uses different types of devices, including Windows, iOS, and Android devices. Admins for that organization have created a security baseline profile in Intune that they want to apply across the devices. To which devices can the security baseline profile be applied?",
+    "back": "Windows devices\n\nNOT Android or iOS devices"
+  },
+  {
+    "front": "Microsoft Intune security baselines",
+    "back": "ONLY for windows devices and MSFT applications"
+  },
+  {
+    "front": "HIPAA",
+    "back": "Health Insurance Portability and Accountability Act - rules on how health-related info should be protected"
+  },
+  {
+    "front": "FERPA",
+    "back": "Family Educational Rights and Privacy Act - rules to protect student information"
+  },
+  {
+    "front": "ISO 27701",
+    "back": "rules and guidance to manage personal information and demonstrate compliance"
+  },
+  {
+    "front": "Service Trust Portal",
+    "back": "provides info, tools, and other resources about Microsoft security, privacy, and compliance practices\n\nIncludes:\nCompliance Manager - measures company's progress\nTrust Documents - links to a docs\nIndustries & Regions - compliance info in different areas\nTrust Center - security, compliance, and privacy in the Microsoft Cloud"
+  },
+  {
+    "front": "Compliance Manager",
+    "back": "Part of the Service Trust Portal\n\nCompliance Manager - measures your progress in completing actions to reduce risk around data protection and regulatory standards"
+  },
+  {
+    "front": "Microsoft's six key privacy principles",
+    "back": "1) Control - put customer in control of their data\n2) Transparency\n3) Security\n4) Strong legal protections - respect local privacy law and advocate for privacy as a human right\n5) No content-based targeting - not using email, chat, files, or other personal content to target advertising\n6) Benefits to you - if data is collected about the customer it benefits the customer (i.e. makes their experience better)"
+  },
+  {
+    "front": "Microsoft 365 Compliance Center",
+    "back": "Available to customers with a M365 SKU with roles: GA, Compliance Admin, Compliance Data admin\n\nOverview of how the company is meeting compliance requirements\n\nMaps regulatory controls against recommended improvement actions in prioritized order\n\nIncludes:\nCompliance Manager\na Compliance Score\nSolution catalog - compliance solutions & actions\nActive alerts"
+  },
+  {
+    "front": "Compliance Score & types",
+    "back": "measures the progress in completing recommended improvement actions within controls related to compliance\n\nImprovement action types:\n1) Your improved actions (responsibility of org/company)\n2) Microsoft actions (responsibility of Microsoft to manage\n\nOr:\n1) Mandatory - should/can NOT be bypassed (e.g. password requirement)\n2) Discretionary - depends on the user adherence (e.g. lock laptop when leave it)\n\nSub categories:\nPreventative\nDetective\nCorrective"
+  },
+  {
+    "front": "Solution catalog (compliance)",
+    "back": "links to collections of integrated compliance solutions across 3 areas:\n1) information protection & governance\n2) Insider risk management - identify & act before an incident\n3) Discover & respond section - find and respond to compliance issues"
+  },
+  {
+    "front": "Compliance Manager",
+    "back": "end-to-end solution in M365 Compliance Center that helps admins manage org's compliance requirements easier\n\nIncludes:\nPrebuilt assessment and customizable templates with common industry and location regulations/standards"
+  },
+  {
+    "front": "Shared controls",
+    "back": "controls both your organization and Microsoft share responsibility for implementing"
+  },
+  {
+    "front": "Microsoft Information Protection (MIP)",
+    "back": "discovers, classifies, and protects sensitive and business critical content/data throughout its lifecycle\n\nmanages your content lifecycle using solutions to import, store, and classify business-critical data so you can keep what you need and delete what you don't\n\nfor on-orem, cloud, and hybrid environments"
+  },
+  {
+    "front": "Sensitive information types",
+    "back": "figures with set patterns that can be used to identify them (e.g. SSN = XXXX-XX-XXXX) that can be identified by MSFT Compliance Center\n\nAlso able to set custom patterns for org-specific requirements\n\nExamples include:\nCredit card numbers, passport or ID numbers, bank account numbers, health services numbers"
+  },
+  {
+    "front": "Trainable classifiers",
+    "back": "Uses AI and machine learning to classify data based on what the item/document is (e.g. contract, invoice, customer records, etc.) not elements in the item (e.g. pattern matching an SSN)\n\nOnce trained/ready, can sort through items in locations like SharePoint Online, Exchange, and OneDrive, and classify the content\n\nTwo types:\n1) Pre-trained classifiers - provided by MSFT and ready to go with no training (e.g. resumes, source code, harassment, profanity, and threat)\n2) Custom trainable classifiers - classifying data unique to an org like contracts and customer records; provide with many samples to \"train\""
+  },
+  {
+    "front": "Content explorer",
+    "back": "a tab in the data classification pane of the MSFT Compliance Center\n\ngain visibility into content that has been scanned\n\nAccess strictly limited to two roles:\n1) Content explorer list viewer\n2) Content explorer content viewer"
+  },
+  {
+    "front": "Activity explorer",
+    "back": "provides visibility into what content has been discovered and LABLED/CLASSIFIED and where it is at; includes label downgrades (e.g. Red --> Green data data classification)\n\nadmins have 30+ filter options"
+  },
+  {
+    "front": "Sensitivity labels",
+    "back": "orgs decide on sensitivity labels applied to content such as emails and documents\n\neach item can only have one sensitivity label on it at a time\n\nthey are:\ncustomizable (e.g. red, orange, yellow, green)\nclear text - stored in clear text so TPO can read and apply their own protect actions\nPersistent - becomes part of metadata for that content and moves with it"
+  },
+  {
+    "front": "Sensitivity label uses",
+    "back": "*Encrypt email and/or documents\n*Mark content - via watermark, header, footer, etc.\n*Label automatically\n*Protect content in containers via sites or groups\n*Extend sensitivity labels to third-party apps and services\n*Classify content without using any protection settings, just for awareness"
+  },
+  {
+    "front": "Label policies",
+    "back": "how sensitivity labels are applied to users or groups\n\nadmins can:\n*Choose who can see the labels\n*Apply a default label\n*Require justification for label change\n*Mandatory labeling (require users to apply a label)\n*Link users to help pages describing meaning of labels"
+  },
+  {
+    "front": "Data Loss Prevention Policies",
+    "back": "Consist of:\nConditions - content must match before a rules is enforced\nAction - what the admin wants to happen if conditions are met\nLocations - where policy will be applied (e.g. Exchange, SharePoint, OneDrive, MSFT Teams, etc.)\n\nPolicies are applied/enforce in prioritized order"
+  },
+  {
+    "front": "Endpoint data loss prevention",
+    "back": "how protection/monitoring capabilities of DLP for sensitive content can be extended to Windows 10 devices\n\nCan be extended to MSFT Teams chat and channels\n\nadmins can audit and manage activities that users complete on sensitive content including:\nCreating an item\nRenaming an item\nCopying items to removable media\nCopying items to network shares\nPrinting documents\nAccessing items using unalloyed apps and browsers"
+  },
+  {
+    "front": "Retention policies",
+    "back": "used to assign the same retention settings to content at a (WEB)SITE level or MAILBOX level\n\n1 policy can be assigned to multiple locations\n\nItems inherit retention settings from their container specified in the retention policy, if content moves out of a container a copy is stored but retention settings don't travel with the content to its new location"
+  },
+  {
+    "front": "Retention labels",
+    "back": "used to assign settings at an ITEM level, such as a folder, document, or email and label travels with content\n\nan item can only have one retention label assigned to it at a time\n\ncan be applied manually or automatically if matches conditions\n\na default label can be applied for SharePoint documents\n\ntakes priority over retention policy (e.g. site has retention policy of 5 years, you need document for 10 - apply retention label to that document only)"
+  },
+  {
+    "front": "Records management",
+    "back": "management solution to manage regulatory, legal, and business-critical records across their corporate data\n\nwhen content is labeled as a record, the following happens:\n1) restrictions are put on it to block certain activities (e.g. deletion)\n2) activities are logged\n3) proof of disposition is kept at end of retention period (proof of deletion?)\n\nRules for 'records':\n1) regulatory label can't be removed when content is marked as a regulator record, not even by a GA (irreversible)\n2) retention periods cannot be made shorter after the label has been applied"
+  },
+  {
+    "front": "Insider risk management principles",
+    "back": "1) Transparency - balance user privacy vs org risk w/ privacy-by-design architecture\n2) Configurable - policies configurable based on industry, geography, and business group\n3) Integrated - Inegrated workflow across M365 compliance solutions\n4) Actionable - insights to enable user notifications and data/user investigations"
+  },
+  {
+    "front": "Communication compliance",
+    "back": "Helps minimize communication risks by enabling orgs to detect, capture, and take remediation actions for inappropriate messages\n\nscan internal and external communications for policy matches to be reviewed\n\nUses this workflow:\n1) Configure - identify compliance requirements and configure applicable comms policies\n2) Investigate - admins look deeper into issues detected when communication matches policy\n3) Remediate - options include an alert, tagging a message, notifying a user, escalating to another reviewer, marking as false positive, removing a message in Teams, and escalating for investigation\n4) Monitor - keep track of and manage compliance issues identified by comms compliance policies through the entire workflow process"
+  },
+  {
+    "front": "Information Barriers",
+    "back": "restrict communication/searching for a user between groups to avoid conflict of interest from occurring in an org\n\nsupports only TWO-way restrictions, not one-way\n\nexamples:\n*students can't look up other student info or chat with them\n*legal - lawyers keep client info separate from other clients\n*professional services"
+  },
+  {
+    "front": "zero standing access",
+    "back": "any user who needs privileged access must request permissions for access and will only receive the level they need when they need it (JEA/JIT)"
+  },
+  {
+    "front": "Privileged ACCESS management (PAM)",
+    "back": "allows granular access control over privileged admin TASKS in M365\n\nDifferent than PIM because It is scoped at the TASK level with ability to execute multiple tasks; PIM is at the AD roles and role group level"
+  },
+  {
+    "front": "Customer Lockbox",
+    "back": "ensures MSFT can't access an org's content to resolve a case requiring assistance from a MSFT without explicit customer approval"
+  },
+  {
+    "front": "eDiscovery tools",
+    "back": "eDiscovery tools can be used to search for content in Exchange Online mailboxes, Microsoft 365 Groups, MSFT Teams, SharePoint Online, OneDrive for Business conversations, and Yammer teams\n\nSearch via the Content search tool\n\nUsed if company is involved in litigation"
+  },
+  {
+    "front": "Advanced eDiscovery",
+    "back": "part of M 365 and provides ability for: Content Search\nCore eDiscovery\nAdvanced eDiscovery"
+  },
+  {
+    "front": "Content Search eDiscovery tool",
+    "back": "enables search for in-place items such as email, documents, and IM conversations\n\nMust be a member of the eDiscovery Manager role group\n\nAccessible via Compliance Center in O365 or M365"
+  },
+  {
+    "front": "Content search actions",
+    "back": "MSFT created several Security and Compliance Center PowerShell scripts to complete content search-related tasks including:\nsearch-specific mailbox or sites\nsearch for list of users\nManage multiple searches\nClone a search"
+  },
+  {
+    "front": "Core eDiscovery workflow",
+    "back": "a basic tool that orgs can use to search and export content in M365\n\nStarts from the M365 Compliance Center\n\n1) Create a case and add members to it\n2) Create an eDiscover hold - may take up to 24 hours to take effect, infinite or specify date range\n3) Search for content via queries\n4) Export content - to a results.csv file\n5) Close, reopen, and delete a core eDiscovery case - 30 day grace period when holds are turned off"
+  },
+  {
+    "front": "Advanced eDiscovery workflow",
+    "back": "builds on core eDiscvoery solution that aligns with EDRM (Electronic Discovery Reference Model)\n\n1. Add custodians to a case - someone who has admin control of a document or file\n2. Search custodial data sources for data relevant to the case - search custodian locations\n3. Add data to a review set - add search results to a review set; data is copied, indexed, & moved to secure location ion Azure Storage\n4. Review and analyze data in a review set\n5. Export and download case data - copy to a different Azure Storage location"
+  },
+  {
+    "front": "EDRM",
+    "back": "Electronic Discovery Reference Model"
+  },
+  {
+    "front": "unified audit log",
+    "back": "allows orgs to view user and admin activity in one place across several services (MSFT 365 services, Dynamics 365, MSFT Power Apps, MSFT Power Automate, PowerBI, AAD, etc.)"
+  },
+  {
+    "front": "audit log record retention",
+    "back": "dependent on O365 or M365 Enterprise subscription and the type of license assigned to specific users\n\ncore audit capability, audit record is kept for 90 days\n\ncan take 30 min-24 hours after an event occurs for the audit log record to be returned in a search"
+  },
+  {
+    "front": "Advanced Audit",
+    "back": "helps orgs conduct forensic and compliance investigations by increasing audit log retention required to complete investigation\n\nrequires one of the following:\n*M365 E5 or E3 license\n*O365 E3 license with MSFT E5 Compliance\n*M365 E5 eDiscovery and Audit add-on license\n\nIncludes crucial events\n\nretains all Exchange, SharePoint, and AAD audit records for one year, max available is 10 years with additional license"
+  },
+  {
+    "front": "Crucial events",
+    "back": "Part of Advanced Auditing\n\nIncludes:\n*MailItemsAccess - when mail was accessed\n*Send - when a user sends/replies/forwards and email (does not include content, just header/metadata)\n*SearchQueryIntiatedExchange - when a user searches something in the search bar in Outlook on the web (OWA) to search for items in a mailbox\n*SearchQueryInitiatedSharePoint - when a person searches for something in the SharePoint home site for your org"
+  },
+  {
+    "front": "Azure Resource Manager (ARM)",
+    "back": "provides management layer that enables admins to create, update, and delete resources in an Azure account\n\nadmins can use RESOURCE LOCKS to secure resources after deployment"
+  },
+  {
+    "front": "Resource locks",
+    "back": "Used to prevent critical resources from being accidentally deleted or changed\n\nOptions:\nCanNotDelete (can still modify) or\nReadOnly (cannot modify)\n\nResources can have both locks at once"
+  },
+  {
+    "front": "Azure Blueprints",
+    "back": "provides a way to define a repeatable set of Azure resources; can be replicated to multiple Azure regions\n\nenables dev teams to rapidly provision and run new environments that are known to be in compliance with org's requirements\n\nexamples include:\n*Role Assignments\n*Policy Assignments\n*Azure Resource Manager (ARM) templates\n*Resource Groups"
+  },
+  {
+    "front": "Azure Policy",
+    "back": "designed to help enforce standards and assess compliance across the org via aggregate view of all resources\n\ncan remediate in bulk if issue identified\n\nevaluates whether properties of resources match with policy definitions ;(outlined in JSON format)"
+  }
+]
