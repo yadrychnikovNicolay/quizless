@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+}
+
+a {
+    color: black !important;
+}
+
+.flash {
+    text-align: center;
+    margin: auto;
+    font-size: 22px;
+}
+
+#flash_display {
+    height: 65vh;
+    width: 1200px;
+    padding: 10%;
+    margin: 30px auto 0 auto;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.SetPageTerm-content {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    border: 1px solid black
+}
