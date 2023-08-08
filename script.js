@@ -13,6 +13,7 @@ let fetchData = async() => {
 
 const initFlipper = data => {
     flash_display.innerText = data[0].front
+    flash_display.addEventListener('click', () => {flipCard(data)})
     flash_controls_flip.addEventListener('click', () => {flipCard(data)})
     flash_controls_back.addEventListener('click', () => {handleControls("prev", data)})
     flash_controls_next.addEventListener('click', () => {handleControls("next", data)})
