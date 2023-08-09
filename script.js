@@ -3,6 +3,8 @@ const flash_controls_back = document.getElementById('flash_controls_back')
 const flash_controls_flip = document.getElementById('flash_controls_flip')
 const flash_controls_next = document.getElementById('flash_controls_next')
 const flash_count = document.getElementById('flash_count')
+const flash_face = document.getElementById('flash_face')
+
 
 let fetchData = async() => {
     const response = await fetch('./azure_sc_900.json');
@@ -17,6 +19,7 @@ const initFlipper = data => {
     flash_controls_back.addEventListener('click', () => {handleControls("prev", data)})
     flash_controls_next.addEventListener('click', () => {handleControls("next", data)})
     flash_count.innerText = `1/${data.length}`
+    flash_face.innerText = ' (front)'
 }
 
 let data = fetchData().then(data => initFlipper(data))
@@ -25,9 +28,15 @@ const flipCard = data => {
     if(flash_display.dataset.cardside == "back") {
         flash_display.innerText = data[flash_display.dataset.cardid].front
         flash_display.dataset.cardside = "front"
+        flash_face.innerText = ` (${flash_display.dataset.cardside})`
+        // flash_display.classList.remove("flash_back")
+        // flash_display.classList.add("flash_front")
     } else {
         flash_display.innerText = data[flash_display.dataset.cardid].back
         flash_display.dataset.cardside = "back"
+        flash_face.innerText = ` (${flash_display.dataset.cardside})`
+        // flash_display.classList.remove("flash_front")
+        // flash_display.classList.add("flash_back")
     }
 }
 
