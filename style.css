@@ -20,6 +20,7 @@ a {
     border: 3px solid black;
     border-radius: 5px;
     cursor: pointer;
+    user-select: none;
 }
 
 .hidden {
