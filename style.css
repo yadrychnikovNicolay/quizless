@@ -13,6 +13,8 @@ a {
 }
 
 #flash_display {
+    background-color: antiquewhite;
+    opacity: 0.8;
     height: 65vh;
     width: 1200px;
     padding: 10%;
@@ -21,7 +23,14 @@ a {
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
-    transition: 1s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.animate {
+    color: transparent;
+    transform: rotateY(360deg);
+    transition: transform 0.2s;
 }
 
 #flash_face {
